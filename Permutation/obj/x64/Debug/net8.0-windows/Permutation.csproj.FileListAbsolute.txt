@@ -1,0 +1,44 @@
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.exe
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.dll.config
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.deps.json
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.runtimeconfig.json
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.pdb
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.frmPerm.resources
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.Properties.Resources.resources
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.GenerateResource.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.CoreCompileInputs.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\refint\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.pdb
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.genruntimeconfig.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\ref\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\bin\x64\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.AssemblyReference.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\My C# Code\KEN LOOK HERE!\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutat.BE59870A.Up2Date
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.exe
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.dll.config
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.deps.json
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.runtimeconfig.json
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\Permutation.pdb
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\bin\x64\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.AssemblyReference.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.frmPerm.resources
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.Properties.Resources.resources
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.GenerateResource.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.csproj.CoreCompileInputs.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutat.BE59870A.Up2Date
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\refint\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.pdb
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.genruntimeconfig.cache
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\ref\Permutation.dll

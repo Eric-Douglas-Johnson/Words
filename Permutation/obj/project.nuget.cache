@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Np3HxSdvfw4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Permutation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\e_d_j\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\e_d_j\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\e_d_j\\.nuget\\packages\\system.io.pipelines\\9.0.0\\system.io.pipelines.9.0.0.nupkg.sha512",
+    "C:\\Users\\e_d_j\\.nuget\\packages\\system.text.encodings.web\\9.0.0\\system.text.encodings.web.9.0.0.nupkg.sha512",
+    "C:\\Users\\e_d_j\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
