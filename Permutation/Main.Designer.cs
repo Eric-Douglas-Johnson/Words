@@ -106,7 +106,7 @@
             lstDictionaryWords.FormattingEnabled = true;
             lstDictionaryWords.HorizontalScrollbar = true;
             lstDictionaryWords.ItemHeight = 23;
-            lstDictionaryWords.Location = new System.Drawing.Point(335, 123);
+            lstDictionaryWords.Location = new System.Drawing.Point(335, 126);
             lstDictionaryWords.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             lstDictionaryWords.Name = "lstDictionaryWords";
             lstDictionaryWords.Size = new System.Drawing.Size(333, 418);

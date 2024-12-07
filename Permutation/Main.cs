@@ -33,23 +33,23 @@ namespace Permutation {
                 return;
             }
 
-            List<string[]> permuationsList;
-
-            if (!string.IsNullOrEmpty(txtLetterPosition.Text) && !string.IsNullOrEmpty(txtSubtitutionLetters.Text))
-            {
-                permuationsList = GetPermutationsWithSubstitutions();
-            }
-            else
-            {
-                string[] singleWordPermutations = GetPermutations(txtWord.Text.ToString());
-                AddArrayItemsToListBox(singleWordPermutations);
-                permuationsList = new List<string[]>() { singleWordPermutations };
-            }
-
             IProgress<string> currentWordProgress = new Progress<string>(currentWord =>
             {
                 lblCurrentWordSearched.Text = currentWord;
             });
+
+            List<string[]> permuationsList;
+
+            if (!string.IsNullOrEmpty(txtLetterPosition.Text) && !string.IsNullOrEmpty(txtSubtitutionLetters.Text))
+            {
+                permuationsList = await Task.Run(() => GetPermutationsWithSubstitutions());
+            }
+            else
+            {
+                string[] singleWordPermutations = await Task.Run(() => GetPermutations(txtWord.Text.ToString()));
+                AddArrayItemsToListBox(singleWordPermutations);
+                permuationsList = new List<string[]>() { singleWordPermutations };
+            }
 
             var foundList = await Task.Run(() => FindAllThatExistInDictionary(permuationsList, currentWordProgress));
 
@@ -118,7 +118,7 @@ namespace Permutation {
         {
             char[] inputCharArray = inputString.ToCharArray();
             string subString;
-            string[] subStrings = new string[1000000];
+            string[] subStrings = new string[100 * 100 * 100 * 10];
             int subIndex = 0;
             int first = inputString.Length - 2;
             int second = first + 1;
