@@ -42,3 +42,4 @@ C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.
 C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.pdb
 C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.genruntimeconfig.cache
 C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\ref\Permutation.dll
+C:\Users\e_d_j\OneDrive\Desktop\Code\Permutation\Permutation\obj\x64\Debug\net8.0-windows\Permutation.sourcelink.json

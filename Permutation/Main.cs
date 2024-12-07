@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.Json.Nodes;
 using System.Text.Json;
+using System.Web;
+using System.Text;
 
 namespace Permutation {
     public partial class frmPerm : Form
@@ -23,43 +25,71 @@ namespace Permutation {
             _httpClient = new HttpClient();
         }
 
-        private async void btnPer_Click(object sender, EventArgs e)
+        private async void btnFindAll_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPer.Text) && ValidInput(txtPer.Text))
+            if (!ValidInput(txtWord.Text)) 
             {
-                string[] permutations = GetPermutations(txtPer.Text.ToString());
-                AddArrayItemsToListBox(permutations);
+                MessageBox.Show("Word is empty or not valid");
+                return;
+            }
 
-                lstAllPermutations.Items.Add("-----------------------------------------");
-                lstAllPermutations.Items.Add("Permutations =  " + permutations.Length);
-                lstAllPermutations.Items.Add("-------------------------------------------");
+            List<string[]> permuationsList;
 
-                if (HasDuplicates(permutations))
-                {
-                    lstAllPermutations.Items.Add("Two or more of same letter in input string");
-                }
-
-                IProgress<string> currentWordProgress = new Progress<string>(currentWord =>
-                {
-                    lblCurrentWordSearched.Text = currentWord;
-                });
-
-                var foundList = await Task.Run(() => FindAllThatExistInDictionary(permutations, currentWordProgress));
-
-                lblCurrentWordSearched.Text = "Search Complete";
-
-                foreach (var word in foundList)
-                {
-                    lstDictionaryWords.Items.Add(word);
-                }
+            if (!string.IsNullOrEmpty(txtLetterPosition.Text) && !string.IsNullOrEmpty(txtSubtitutionLetters.Text))
+            {
+                permuationsList = GetPermutationsWithSubstitutions();
             }
             else
             {
-                lstAllPermutations.Items.Add("------------------------------------------------");
-                txtPer.Clear();
-                lstAllPermutations.Items.Add("Enter more than one character");
-                lstAllPermutations.Items.Add("---------------------------------------------------");
+                string[] singleWordPermutations = GetPermutations(txtWord.Text.ToString());
+                AddArrayItemsToListBox(singleWordPermutations);
+                permuationsList = new List<string[]>() { singleWordPermutations };
             }
+
+            IProgress<string> currentWordProgress = new Progress<string>(currentWord =>
+            {
+                lblCurrentWordSearched.Text = currentWord;
+            });
+
+            var foundList = await Task.Run(() => FindAllThatExistInDictionary(permuationsList, currentWordProgress));
+
+            lblCurrentWordSearched.Text = "Search Complete";
+
+            foreach (var word in foundList)
+            {
+                lstDictionaryWords.Items.Add(word);
+            }
+        }
+
+        private List<string[]> GetPermutationsWithSubstitutions()
+        {
+            if (!int.TryParse(txtLetterPosition.Text, out var letterPos)) { throw new Exception("Letter Position is not valid"); }
+            if (letterPos > txtWord.Text.Length) { throw new Exception("Letter position is out of bounds"); }
+
+            var permutationsList = new List<string[]>();
+            var letterIndex = letterPos - 1;
+            var subLetters = txtSubtitutionLetters.Text.Split(',');
+            var wordList = new List<string>();
+            wordList.Add(txtWord.Text);
+            StringBuilder tempWord = new(txtWord.Text);
+
+            foreach (var letter in subLetters)
+            {
+                if (!string.IsNullOrWhiteSpace(letter))
+                {
+                    tempWord[letterIndex] = char.Parse(letter);
+                    wordList.Add(tempWord.ToString());
+                }
+            }
+
+            foreach (var word in wordList)
+            {
+                var wordPermutations = GetPermutations(word);
+                AddArrayItemsToListBox(wordPermutations);
+                permutationsList.Add(wordPermutations);
+            }
+
+            return permutationsList;
         }
 
         private void AddArrayItemsToListBox(string[] array)
@@ -174,12 +204,14 @@ namespace Permutation {
         {
             lstAllPermutations.Items.Clear();
             lstDictionaryWords.Items.Clear();
-            txtPer.Clear();
+            txtWord.Clear();
             lblCurrentWordSearched.Text = "-------------";
         }
 
         private bool ValidInput(string input)
         {
+            if (string.IsNullOrEmpty(input)) return false;
+
             if (input.Length < 2)
             {
                 return false;
@@ -189,17 +221,17 @@ namespace Permutation {
 
         private async void btnFindWord_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPer.Text) && ValidInput(txtPer.Text))
+            if (ValidInput(txtWord.Text))
             {
-                bool wordFound = await GetWordFromDictionaryApi(txtPer.Text);
+                bool wordFound = await GetWordFromDictionaryApi(txtWord.Text);
 
                 if (wordFound)
                 {
-                    lblCurrentWordSearched.Text = $"{txtPer.Text} was found";
+                    lblCurrentWordSearched.Text = $"{txtWord.Text} was found";
                 }
                 else
                 {
-                    lblCurrentWordSearched.Text = $"{txtPer.Text} was not found";
+                    lblCurrentWordSearched.Text = $"{txtWord.Text} was not found";
                 }
             }
             else
@@ -208,25 +240,25 @@ namespace Permutation {
             }
         }
 
-        private List<string> FindAllThatExistInDictionary(string[] permutations, IProgress<string> currentWordProgress)
+        private List<string> FindAllThatExistInDictionary(List<string[]> permutations, IProgress<string> currentWordProgress)
         {
             List<string> foundList = [];
+            int currentPermutationSet = 1;
 
-            foreach (var permutation in permutations)
+            foreach (var permutationSet in permutations)
             {
-                currentWordProgress.Report(permutation);
-
-                if (permutation == "warded")
+                foreach (var permutation in permutationSet)
                 {
-                    foundList.Add(permutation);
-                }
+                    currentWordProgress.Report($"Set {currentPermutationSet} - {permutation}");
 
-                bool wordFound = GetWordFromDictionaryApi(permutation).Result;
+                    bool wordFound = GetWordFromDictionaryApi(permutation).Result;
 
-                if (wordFound)
-                {
-                    foundList.Add(permutation);
+                    if (wordFound)
+                    {
+                        foundList.Add(permutation);
+                    }
                 }
+                currentPermutationSet++;
             }
 
             return foundList;
@@ -258,27 +290,27 @@ namespace Permutation {
             }
         }
 
-        private void txtPer_TextChanged(object sender, EventArgs e)
-        {
-            if (txtPer.Text.All(char.IsLetterOrDigit))
-            {
-                CheckBox checkBox = new()
-                {
-                    Name = "wordChar_" + _wordCharIndex,
-                    Text = txtPer.Text.Substring(txtPer.Text.Length - 1),
-                    Location = new System.Drawing.Point(685, _dynamicCheckboxCurrentY),
-                    Font = new System.Drawing.Font("Calibri", 14)
-                };
+        //private void txtPer_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (txtPer.Text.All(char.IsLetterOrDigit))
+        //    {
+        //        CheckBox checkBox = new()
+        //        {
+        //            Name = "wordChar_" + _wordCharIndex,
+        //            Text = txtPer.Text.Substring(txtPer.Text.Length - 1),
+        //            Location = new System.Drawing.Point(685, _dynamicCheckboxCurrentY),
+        //            Font = new System.Drawing.Font("Calibri", 14)
+        //        };
 
-                checkBox.Click += (sender, e) =>
-                {
-                    MessageBox.Show(checkBox.Name);
-                };
+        //        checkBox.Click += (sender, e) =>
+        //        {
+        //            MessageBox.Show(checkBox.Name);
+        //        };
 
-                this.Controls.Add(checkBox);
-                _wordCharIndex++;
-                _dynamicCheckboxCurrentY += 20;
-            }
-        }
+        //        this.Controls.Add(checkBox);
+        //        _wordCharIndex++;
+        //        _dynamicCheckboxCurrentY += 20;
+        //    }
+        //}
     }
 }

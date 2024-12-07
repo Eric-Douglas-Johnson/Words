@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{FB395B62-9078-4E24-AFA5-2F937954C81E}|Permutation\\Permutation.csproj|solutionrelative:permutation\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB395B62-9078-4E24-AFA5-2F937954C81E}|Permutation\\Permutation.csproj|C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\permutation\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{FB395B62-9078-4E24-AFA5-2F937954C81E}|Permutation\\Permutation.csproj|c:\\users\\e_d_j\\onedrive\\desktop\\code\\permutation\\permutation\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{FB395B62-9078-4E24-AFA5-2F937954C81E}|Permutation\\Permutation.csproj|solutionrelative:permutation\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Main.cs",
-              "RelativeDocumentMoniker": "Permutation\\Main.cs",
-              "ToolTip": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Main.cs",
-              "RelativeToolTip": "Permutation\\Main.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAYwBYBAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T21:42:29.857Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -42,8 +29,21 @@
               "ToolTip": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Main.cs [Design]",
               "RelativeToolTip": "Permutation\\Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:11:45.46Z",
+              "WhenOpened": "2024-12-07T18:29:12.686Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Main.cs",
+              "RelativeDocumentMoniker": "Permutation\\Main.cs",
+              "ToolTip": "C:\\Users\\e_d_j\\OneDrive\\Desktop\\Code\\Permutation\\Permutation\\Main.cs",
+              "RelativeToolTip": "Permutation\\Main.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAADgvwQBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T21:42:29.857Z",
+              "EditorCaption": ""
             }
           ]
         }

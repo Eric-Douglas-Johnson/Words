@@ -28,28 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnPer = new System.Windows.Forms.Button();
+            btnFindAll = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
-            txtPer = new System.Windows.Forms.TextBox();
+            txtWord = new System.Windows.Forms.TextBox();
             lstAllPermutations = new System.Windows.Forms.ListBox();
             btnClear = new System.Windows.Forms.Button();
             lstDictionaryWords = new System.Windows.Forms.ListBox();
             lblCurrentWordSearched = new System.Windows.Forms.Label();
             btnFindWord = new System.Windows.Forms.Button();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            txtSubtitutionLetters = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            txtLetterPosition = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnPer
+            // btnFindAll
             // 
-            btnPer.Font = new System.Drawing.Font("Calibri", 14.25F);
-            btnPer.Location = new System.Drawing.Point(552, 83);
-            btnPer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            btnPer.Name = "btnPer";
-            btnPer.Size = new System.Drawing.Size(116, 31);
-            btnPer.TabIndex = 0;
-            btnPer.Text = "Find All";
-            btnPer.UseVisualStyleBackColor = true;
-            btnPer.Click += btnPer_Click;
+            btnFindAll.Font = new System.Drawing.Font("Calibri", 14.25F);
+            btnFindAll.Location = new System.Drawing.Point(552, 85);
+            btnFindAll.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            btnFindAll.Name = "btnFindAll";
+            btnFindAll.Size = new System.Drawing.Size(116, 31);
+            btnFindAll.TabIndex = 0;
+            btnFindAll.Text = "Find All";
+            btnFindAll.UseVisualStyleBackColor = true;
+            btnFindAll.Click += btnFindAll_Click;
             // 
             // label1
             // 
@@ -63,15 +68,14 @@
             label1.TabIndex = 1;
             label1.Text = "Word:";
             // 
-            // txtPer
+            // txtWord
             // 
-            txtPer.Font = new System.Drawing.Font("Calibri", 14.25F);
-            txtPer.Location = new System.Drawing.Point(397, 12);
-            txtPer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            txtPer.Name = "txtPer";
-            txtPer.Size = new System.Drawing.Size(271, 31);
-            txtPer.TabIndex = 2;
-            txtPer.TextChanged += txtPer_TextChanged;
+            txtWord.Font = new System.Drawing.Font("Calibri", 14.25F);
+            txtWord.Location = new System.Drawing.Point(397, 12);
+            txtWord.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            txtWord.Name = "txtWord";
+            txtWord.Size = new System.Drawing.Size(271, 31);
+            txtWord.TabIndex = 2;
             // 
             // lstAllPermutations
             // 
@@ -131,52 +135,104 @@
             btnFindWord.UseVisualStyleBackColor = true;
             btnFindWord.Click += btnFindWord_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtSubtitutionLetters);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtLetterPosition);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = System.Drawing.Color.White;
+            groupBox1.Location = new System.Drawing.Point(673, 11);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(324, 139);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Variable Letter";
+            // 
+            // txtSubtitutionLetters
+            // 
+            txtSubtitutionLetters.Font = new System.Drawing.Font("Calibri", 12F);
+            txtSubtitutionLetters.Location = new System.Drawing.Point(15, 98);
+            txtSubtitutionLetters.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            txtSubtitutionLetters.Multiline = true;
+            txtSubtitutionLetters.Name = "txtSubtitutionLetters";
+            txtSubtitutionLetters.Size = new System.Drawing.Size(294, 26);
+            txtSubtitutionLetters.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Calibri", 12F);
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(15, 76);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(284, 19);
+            label3.TabIndex = 12;
+            label3.Text = "Substitution Letters (delimited by comma):";
+            // 
+            // txtLetterPosition
+            // 
+            txtLetterPosition.Font = new System.Drawing.Font("Calibri", 12F);
+            txtLetterPosition.Location = new System.Drawing.Point(126, 35);
+            txtLetterPosition.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            txtLetterPosition.Name = "txtLetterPosition";
+            txtLetterPosition.Size = new System.Drawing.Size(52, 27);
+            txtLetterPosition.TabIndex = 11;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Font = new System.Drawing.Font("Calibri", 12F);
             label2.ForeColor = System.Drawing.Color.White;
-            label2.Location = new System.Drawing.Point(683, 15);
+            label2.Location = new System.Drawing.Point(15, 38);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(104, 23);
-            label2.TabIndex = 8;
-            label2.Text = "Lock Letters";
+            label2.Size = new System.Drawing.Size(107, 19);
+            label2.TabIndex = 10;
+            label2.Text = "Letter Position:";
             // 
             // frmPerm
             // 
-            AcceptButton = btnPer;
+            AcceptButton = btnFindAll;
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
-            ClientSize = new System.Drawing.Size(793, 554);
-            Controls.Add(label2);
+            ClientSize = new System.Drawing.Size(1009, 554);
+            Controls.Add(groupBox1);
             Controls.Add(btnFindWord);
             Controls.Add(lblCurrentWordSearched);
             Controls.Add(lstDictionaryWords);
             Controls.Add(btnClear);
             Controls.Add(lstAllPermutations);
-            Controls.Add(txtPer);
+            Controls.Add(txtWord);
             Controls.Add(label1);
-            Controls.Add(btnPer);
+            Controls.Add(btnFindAll);
             Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             Name = "frmPerm";
             Text = "Permutation";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnPer;
+        private System.Windows.Forms.Button btnFindAll;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPer;
+        private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.ListBox lstAllPermutations;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ListBox lstDictionaryWords;
         private System.Windows.Forms.Label lblCurrentWordSearched;
         private System.Windows.Forms.Button btnFindWord;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtLetterPosition;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSubtitutionLetters;
+        private System.Windows.Forms.Label label3;
     }
 }
 
