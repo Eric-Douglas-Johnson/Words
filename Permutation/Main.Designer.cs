@@ -44,6 +44,7 @@
             label2 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             lblRunTime = new System.Windows.Forms.Label();
+            chkCycleAllPositions = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -140,6 +141,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(chkCycleAllPositions);
             groupBox1.Controls.Add(txtSubtitutionLetters);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtLetterPosition);
@@ -220,6 +222,18 @@
             lblRunTime.TabIndex = 14;
             lblRunTime.Text = "---------";
             // 
+            // chkCycleAllPositions
+            // 
+            chkCycleAllPositions.AutoSize = true;
+            chkCycleAllPositions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            chkCycleAllPositions.Location = new System.Drawing.Point(183, 38);
+            chkCycleAllPositions.Name = "chkCycleAllPositions";
+            chkCycleAllPositions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            chkCycleAllPositions.Size = new System.Drawing.Size(84, 23);
+            chkCycleAllPositions.TabIndex = 14;
+            chkCycleAllPositions.Text = "Cycle All";
+            chkCycleAllPositions.UseVisualStyleBackColor = true;
+            // 
             // frmPerm
             // 
             AcceptButton = btnFindAll;
@@ -265,6 +279,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblRunTime;
+        private System.Windows.Forms.CheckBox chkCycleAllPositions;
     }
 }
 
