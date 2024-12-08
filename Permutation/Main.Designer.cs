@@ -47,6 +47,8 @@
             lblRunTime = new System.Windows.Forms.Label();
             groupBox2 = new System.Windows.Forms.GroupBox();
             chkViewAllPermutations = new System.Windows.Forms.CheckBox();
+            txtWordLengthTarget = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -239,6 +241,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtWordLengthTarget);
+            groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(chkViewAllPermutations);
             groupBox2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             groupBox2.ForeColor = System.Drawing.Color.White;
@@ -260,6 +264,27 @@
             chkViewAllPermutations.TabIndex = 14;
             chkViewAllPermutations.Text = "View All Permutations";
             chkViewAllPermutations.UseVisualStyleBackColor = true;
+            // 
+            // txtWordLengthTarget
+            // 
+            txtWordLengthTarget.Font = new System.Drawing.Font("Calibri", 12F);
+            txtWordLengthTarget.Location = new System.Drawing.Point(159, 72);
+            txtWordLengthTarget.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            txtWordLengthTarget.Name = "txtWordLengthTarget";
+            txtWordLengthTarget.Size = new System.Drawing.Size(52, 27);
+            txtWordLengthTarget.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Calibri", 12F);
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(15, 75);
+            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(140, 19);
+            label5.TabIndex = 15;
+            label5.Text = "Word Length Target:";
             // 
             // frmPerm
             // 
@@ -312,6 +337,8 @@
         private System.Windows.Forms.CheckBox chkCycleAllPositions;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chkViewAllPermutations;
+        private System.Windows.Forms.TextBox txtWordLengthTarget;
+        private System.Windows.Forms.Label label5;
     }
 }
 

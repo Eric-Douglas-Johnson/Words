@@ -1,6 +1,8 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Permutation
 {
@@ -8,7 +10,36 @@ namespace Permutation
     {
         private static int _factors = 0;
 
-        public static IEnumerable<string> GetUsingOldAlgorithm(string word)
+        public static string GetRandomPermutation(string word)
+        {
+            var charCount = word.Length;
+            var chars = word.ToCharArray();
+            var characterList = new List<Character>();
+
+            for (int i = 0; i < charCount; i++)
+            {
+                characterList.Add(new Character(i, chars[i]));
+            }
+
+            var permutation = new StringBuilder();
+            var random = new Random();
+            int randomIndex;
+
+            while (permutation.Length < charCount)
+            {
+                randomIndex = random.Next(charCount);
+
+                if (!characterList[randomIndex].WasUsedInContext)
+                {
+                    permutation.Append(characterList[randomIndex].Value);
+                    characterList[randomIndex].WasUsedInContext = true;
+                }
+            }
+
+            return permutation.ToString();
+        }
+
+        public static IEnumerable<string> GetAllUsingOldAlgorithm(string word)
         {
             int wordLength = word.Length;
             char[] inputCharArray = word.ToCharArray();
@@ -106,6 +137,19 @@ namespace Permutation
                 }
             }
             return false;
+        }
+    }
+
+    public class Character
+    {
+        public int Index { get; set; }
+        public char Value { get; set; }
+        public bool WasUsedInContext { get; set; }
+
+        public Character(int index,  char value)
+        {
+            Index = index;
+            Value = value;
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Permutation {
             }
             else
             {
-                var singleWordPermutations = await Task.Run(() => PermutationGenerator.GetUsingOldAlgorithm(txtWord.Text.ToString()));
+                var singleWordPermutations = await Task.Run(() => PermutationGenerator.GetAllUsingOldAlgorithm(txtWord.Text.ToString()));
 
                 if (chkViewAllPermutations.Checked)
                 {
@@ -97,7 +97,7 @@ namespace Permutation {
 
             foreach (var word in wordList)
             {
-                var wordPermutations = PermutationGenerator.GetUsingOldAlgorithm(word);
+                var wordPermutations = PermutationGenerator.GetAllUsingOldAlgorithm(word);
                 permutationsList.Add(wordPermutations);
             }
 
