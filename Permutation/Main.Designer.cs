@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerm));
             btnFindAll = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             txtWord = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             label3 = new System.Windows.Forms.Label();
             txtLetterPosition = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            lblRunTime = new System.Windows.Forms.Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -143,9 +146,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             groupBox1.ForeColor = System.Drawing.Color.White;
-            groupBox1.Location = new System.Drawing.Point(673, 11);
+            groupBox1.Location = new System.Drawing.Point(673, 1);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(324, 139);
+            groupBox1.Size = new System.Drawing.Size(327, 139);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Variable Letter";
@@ -193,6 +196,30 @@
             label2.TabIndex = 10;
             label2.Text = "Letter Position:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(688, 157);
+            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(89, 23);
+            label4.TabIndex = 10;
+            label4.Text = "Run Time:";
+            // 
+            // lblRunTime
+            // 
+            lblRunTime.AutoSize = true;
+            lblRunTime.Font = new System.Drawing.Font("Calibri", 12F);
+            lblRunTime.ForeColor = System.Drawing.Color.White;
+            lblRunTime.Location = new System.Drawing.Point(781, 160);
+            lblRunTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblRunTime.Name = "lblRunTime";
+            lblRunTime.Size = new System.Drawing.Size(54, 19);
+            lblRunTime.TabIndex = 14;
+            lblRunTime.Text = "---------";
+            // 
             // frmPerm
             // 
             AcceptButton = btnFindAll;
@@ -200,6 +227,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(1009, 554);
+            Controls.Add(lblRunTime);
+            Controls.Add(label4);
             Controls.Add(groupBox1);
             Controls.Add(btnFindWord);
             Controls.Add(lblCurrentWordSearched);
@@ -209,6 +238,7 @@
             Controls.Add(txtWord);
             Controls.Add(label1);
             Controls.Add(btnFindAll);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             Name = "frmPerm";
             Text = "Permutation";
@@ -233,6 +263,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSubtitutionLetters;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblRunTime;
     }
 }
 

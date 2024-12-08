@@ -27,6 +27,9 @@ namespace Permutation {
 
         private async void btnFindAll_Click(object sender, EventArgs e)
         {
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             if (!ValidInput(txtWord.Text)) 
             {
                 MessageBox.Show("Word is empty or not valid");
@@ -59,6 +62,9 @@ namespace Permutation {
             {
                 lstDictionaryWords.Items.Add(word);
             }
+
+            stopWatch.Stop();
+            lblRunTime.Text = stopWatch.Elapsed.ToString();
         }
 
         private List<string[]> GetPermutationsWithSubstitutions()
