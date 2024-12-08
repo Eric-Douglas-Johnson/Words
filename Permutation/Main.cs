@@ -41,15 +41,23 @@ namespace Permutation {
             {
                 permutationsList = await Task.Run(() => GetPermutationsWithSubstitutions());
 
-                foreach (var permutationSet in permutationsList)
+                if (chkViewAllPermutations.Checked)
                 {
-                    AddItemsToListBox(permutationSet, lstAllPermutations);
+                    foreach (var permutationSet in permutationsList)
+                    {
+                        AddItemsToListBox(permutationSet, lstAllPermutations);
+                    }
                 }
             }
             else
             {
                 var singleWordPermutations = await Task.Run(() => PermutationGenerator.GetUsingOldAlgorithm(txtWord.Text.ToString()));
-                AddItemsToListBox(singleWordPermutations, lstAllPermutations);
+
+                if (chkViewAllPermutations.Checked)
+                {
+                    AddItemsToListBox(singleWordPermutations, lstAllPermutations);
+                }
+                   
                 permutationsList = new() { singleWordPermutations };
             }
 

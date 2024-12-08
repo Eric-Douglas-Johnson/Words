@@ -38,23 +38,26 @@
             lblCurrentWordSearched = new System.Windows.Forms.Label();
             btnFindWord = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            chkCycleAllPositions = new System.Windows.Forms.CheckBox();
             txtSubtitutionLetters = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             txtLetterPosition = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             lblRunTime = new System.Windows.Forms.Label();
-            chkCycleAllPositions = new System.Windows.Forms.CheckBox();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            chkViewAllPermutations = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnFindAll
             // 
             btnFindAll.Font = new System.Drawing.Font("Calibri", 14.25F);
-            btnFindAll.Location = new System.Drawing.Point(552, 85);
+            btnFindAll.Location = new System.Drawing.Point(584, 85);
             btnFindAll.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             btnFindAll.Name = "btnFindAll";
-            btnFindAll.Size = new System.Drawing.Size(116, 31);
+            btnFindAll.Size = new System.Drawing.Size(84, 31);
             btnFindAll.TabIndex = 0;
             btnFindAll.Text = "Find All";
             btnFindAll.UseVisualStyleBackColor = true;
@@ -148,12 +151,24 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             groupBox1.ForeColor = System.Drawing.Color.White;
-            groupBox1.Location = new System.Drawing.Point(673, 1);
+            groupBox1.Location = new System.Drawing.Point(687, 156);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new System.Drawing.Size(327, 139);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Variable Letter";
+            // 
+            // chkCycleAllPositions
+            // 
+            chkCycleAllPositions.AutoSize = true;
+            chkCycleAllPositions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            chkCycleAllPositions.Location = new System.Drawing.Point(183, 38);
+            chkCycleAllPositions.Name = "chkCycleAllPositions";
+            chkCycleAllPositions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            chkCycleAllPositions.Size = new System.Drawing.Size(84, 23);
+            chkCycleAllPositions.TabIndex = 14;
+            chkCycleAllPositions.Text = "Cycle All";
+            chkCycleAllPositions.UseVisualStyleBackColor = true;
             // 
             // txtSubtitutionLetters
             // 
@@ -203,7 +218,7 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(688, 157);
+            label4.Location = new System.Drawing.Point(687, 521);
             label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(89, 23);
@@ -215,24 +230,36 @@
             lblRunTime.AutoSize = true;
             lblRunTime.Font = new System.Drawing.Font("Calibri", 12F);
             lblRunTime.ForeColor = System.Drawing.Color.White;
-            lblRunTime.Location = new System.Drawing.Point(781, 160);
+            lblRunTime.Location = new System.Drawing.Point(780, 524);
             lblRunTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblRunTime.Name = "lblRunTime";
             lblRunTime.Size = new System.Drawing.Size(54, 19);
             lblRunTime.TabIndex = 14;
             lblRunTime.Text = "---------";
             // 
-            // chkCycleAllPositions
+            // groupBox2
             // 
-            chkCycleAllPositions.AutoSize = true;
-            chkCycleAllPositions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            chkCycleAllPositions.Location = new System.Drawing.Point(183, 38);
-            chkCycleAllPositions.Name = "chkCycleAllPositions";
-            chkCycleAllPositions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            chkCycleAllPositions.Size = new System.Drawing.Size(84, 23);
-            chkCycleAllPositions.TabIndex = 14;
-            chkCycleAllPositions.Text = "Cycle All";
-            chkCycleAllPositions.UseVisualStyleBackColor = true;
+            groupBox2.Controls.Add(chkViewAllPermutations);
+            groupBox2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = System.Drawing.Color.White;
+            groupBox2.Location = new System.Drawing.Point(687, 11);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new System.Drawing.Size(327, 139);
+            groupBox2.TabIndex = 15;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Options";
+            // 
+            // chkViewAllPermutations
+            // 
+            chkViewAllPermutations.AutoSize = true;
+            chkViewAllPermutations.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            chkViewAllPermutations.Location = new System.Drawing.Point(15, 40);
+            chkViewAllPermutations.Name = "chkViewAllPermutations";
+            chkViewAllPermutations.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            chkViewAllPermutations.Size = new System.Drawing.Size(171, 23);
+            chkViewAllPermutations.TabIndex = 14;
+            chkViewAllPermutations.Text = "View All Permutations";
+            chkViewAllPermutations.UseVisualStyleBackColor = true;
             // 
             // frmPerm
             // 
@@ -240,7 +267,8 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
-            ClientSize = new System.Drawing.Size(1009, 554);
+            ClientSize = new System.Drawing.Size(1026, 554);
+            Controls.Add(groupBox2);
             Controls.Add(lblRunTime);
             Controls.Add(label4);
             Controls.Add(groupBox1);
@@ -258,6 +286,8 @@
             Text = "Permutation";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,6 +310,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblRunTime;
         private System.Windows.Forms.CheckBox chkCycleAllPositions;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox chkViewAllPermutations;
     }
 }
 
