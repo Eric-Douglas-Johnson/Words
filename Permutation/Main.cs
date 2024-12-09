@@ -1,15 +1,11 @@
 ﻿
 using System;
-using System.Linq;
 using System.Windows.Forms;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text.Json.Nodes;
-using System.Text.Json;
-using System.Web;
 using System.Text;
+using Permutation.BackEnd;
 
 namespace Permutation {
     public partial class frmPerm : Form

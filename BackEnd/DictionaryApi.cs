@@ -1,10 +1,7 @@
 ﻿
-using System.Net.Http;
 using System.Text.Json.Nodes;
-using System;
-using System.Threading.Tasks;
 
-namespace Permutation
+namespace Permutation.BackEnd
 {
     public static class DictionaryApi
     {
