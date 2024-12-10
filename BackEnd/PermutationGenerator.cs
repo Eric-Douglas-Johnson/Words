@@ -9,6 +9,8 @@ namespace Permutation.BackEnd
 
         public static string GetRandomPermutation(string word)
         {
+            if (string.IsNullOrWhiteSpace(word)) { throw new ArgumentNullException(nameof(word)); }
+
             var charCount = word.Length;
             var chars = word.ToCharArray();
             var characterList = new List<Character>();
@@ -134,19 +136,6 @@ namespace Permutation.BackEnd
                 }
             }
             return false;
-        }
-    }
-
-    public class Character
-    {
-        public int Index { get; set; }
-        public char Value { get; set; }
-        public bool WasUsedInContext { get; set; }
-
-        public Character(int index,  char value)
-        {
-            Index = index;
-            Value = value;
         }
     }
 }
