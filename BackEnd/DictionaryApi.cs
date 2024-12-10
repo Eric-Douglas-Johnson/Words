@@ -19,7 +19,7 @@ namespace Permutation.BackEnd
 
                 try
                 {
-                    var idNode = jsonNode[0][0][0];
+                    var idNode = jsonNode![0]![0]![0];
                     return true;
                 }
                 catch (Exception)

@@ -33,9 +33,14 @@ namespace Permutation {
 
             List<IEnumerable<string>> permutationsList;
 
-            if (!string.IsNullOrEmpty(txtLetterPosition.Text) && !string.IsNullOrEmpty(txtSubtitutionLetters.Text))
+            var singleLetterSubAndPositionSpecified = 
+                !string.IsNullOrEmpty(txtLetterPosition.Text) && !string.IsNullOrEmpty(txtSubtitutionLetters.Text);
+
+            var cycleAllWithSubLettersSpecified = chkCycleAllPositions.Checked && !string.IsNullOrEmpty(txtSubtitutionLetters.Text);
+
+            if (singleLetterSubAndPositionSpecified || cycleAllWithSubLettersSpecified)
             {
-                permutationsList = await Task.Run(() => GetPermutationsWithSubstitutions());
+                permutationsList = await Task.Run(() => GetPermutationsWithSubstitutions(cycleAllWithSubLettersSpecified));
 
                 if (chkViewAllPermutations.Checked)
                 {
@@ -70,24 +75,75 @@ namespace Permutation {
             lblRunTime.Text = stopWatch.Elapsed.ToString();
         }
 
-        private List<IEnumerable<string>> GetPermutationsWithSubstitutions()
+        private List<IEnumerable<string>> GetPermutationsWithSubstitutions(bool cycleAllVariableLetters)
         {
-            if (!int.TryParse(txtLetterPosition.Text, out var letterPos)) { throw new Exception("Letter Position is not valid"); }
-            if (letterPos > txtWord.Text.Length) { throw new Exception("Letter position is out of bounds"); }
+            if (cycleAllVariableLetters)
+            {
+                return GetPermutationsCyclingLetterSubstitutions();
+            }
+            else
+            {
+                return GetPermutationsWithSingleLetterSubstitution();
+            }
+        }
 
+        private List<IEnumerable<string>> GetPermutationsWithSingleLetterSubstitution()
+        {
+            if (!int.TryParse(txtLetterPosition.Text, out var singleSubstitutionLetterPosition))
+            {
+                throw new Exception("Letter Position is not valid");
+            }
+
+            if (singleSubstitutionLetterPosition > txtWord.Text.Length)
+            {
+                throw new Exception("Letter position is out of bounds");
+            }
+
+            var letterIndex = singleSubstitutionLetterPosition - 1;
             var permutationsList = new List<IEnumerable<string>>();
-            var letterIndex = letterPos - 1;
-            var subLetters = txtSubtitutionLetters.Text.Split(',');
+            var substitutionLetters = txtSubtitutionLetters.Text.Split(',');
             var wordList = new List<string>();
             wordList.Add(txtWord.Text);
             StringBuilder tempWord = new(txtWord.Text);
 
-            foreach (var letter in subLetters)
+            foreach (var letter in substitutionLetters)
             {
                 if (!string.IsNullOrWhiteSpace(letter))
                 {
                     tempWord[letterIndex] = char.Parse(letter);
                     wordList.Add(tempWord.ToString());
+                }
+            }
+
+            foreach (var word in wordList)
+            {
+                var wordPermutations = PermutationGenerator.GetAllUsingOldAlgorithm(word);
+                permutationsList.Add(wordPermutations);
+            }
+
+            return permutationsList;
+        }
+
+        private List<IEnumerable<string>> GetPermutationsCyclingLetterSubstitutions()
+        {
+            var permutationsList = new List<IEnumerable<string>>();
+            var substitutionLetters = txtSubtitutionLetters.Text.Split(',');
+            var wordLength = txtWord.Text.Length;
+            var wordList = new List<string>();
+            wordList.Add(txtWord.Text);
+            StringBuilder tempWord;
+
+            for (int letterIndex = 0; letterIndex < wordLength; letterIndex++)
+            {
+                tempWord = new(txtWord.Text);
+
+                foreach (var substitutionLetter in substitutionLetters)
+                {
+                    if (!string.IsNullOrWhiteSpace(substitutionLetter))
+                    {
+                        tempWord[letterIndex] = char.Parse(substitutionLetter);
+                        wordList.Add(tempWord.ToString());
+                    }
                 }
             }
 
